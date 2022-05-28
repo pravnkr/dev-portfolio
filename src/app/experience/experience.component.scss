@@ -1,0 +1,195 @@
+.timeline {
+    position: relative;
+    padding: 5rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -2px;
+        border-right: 2px dashed #4b546f;
+        height: 100%;
+        display: block;
+    }
+}
+
+.timeline-row {
+    padding-left: 50%;
+    position: relative;
+    margin-bottom: 30px;
+
+    .timeline-company {
+        position: absolute;
+        right: 50%;
+        top: 15px;
+        text-align: right;
+        margin-right: 20px;
+        color: #bcd0f7;
+        font-size: 1.5rem;
+
+        small {
+            display: block;
+            font-size: 0.8rem;
+        }
+    }
+
+    .timeline-content {
+        position: relative;
+        padding: 20px 30px;
+        background: #1a233a;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            height: 16px;
+            width: 16px;
+            background: #1a233a;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -49px;
+            width: 20px;
+            height: 20px;
+            border-radius: 100px;
+            z-index: 10;
+            background: #272e48;
+            border: 2px dashed #4b546f;
+        }
+
+        h4 {
+            margin: 0 0 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            line-height: 150%;
+        }
+
+        p {
+            margin-bottom: 30px;
+            line-height: 150%;
+        }
+
+        i {
+            font-size: 1.2rem;
+            line-height: 100%;
+            padding: 15px;
+            border-radius: 100px;
+            background: #272e48;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    }
+
+    &:nth-child(even) {
+        .timeline-content {
+            margin-left: 40px;
+            text-align: left;
+
+            &::after {
+                left: -8px;
+                right: initial;
+                border-bottom: 0;
+                border-left: 0;
+                transform: rotate(-135deg);
+            }
+
+            &::before {
+                left: -52px;
+                right: initial;
+            }
+        }
+    }
+
+    &:nth-child(odd) {
+        padding-left: 0;
+        padding-right: 50%;
+
+        .timeline-company {
+            right: auto;
+            left: 50%;
+            text-align: left;
+            margin-right: 0;
+            margin-left: 20px;
+        }
+
+        .timeline-content {
+            margin-right: 40px;
+
+            &::after {
+                right: -8px;
+                border-left: 0;
+                border-bottom: 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .timeline {
+        padding: 15px;
+
+        &::after {
+            border: 0;
+        }
+
+        .timeline-row {
+            &:nth-child(odd) {
+                padding: 0;
+
+                .timeline-company {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    margin: 0 0 10px;
+                }
+
+                .timeline-content {
+                    margin: 0;
+
+                    &::before {
+                        display: none;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                padding: 0;
+
+                .timeline-company {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    margin: 0 0 10px;
+                    text-align: left;
+                }
+
+                .timeline-content {
+                    margin: 0;
+
+                    &::before {
+                        display: none;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

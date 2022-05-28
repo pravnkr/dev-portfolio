@@ -1,0 +1,91 @@
+<div class="h-100">
+    <ul
+        class="nav nav-pills h-100 flex-column mb-sm-auto mb-0 justify-content-evenly align-items-center align-items-sm-start"
+        id="menu"
+    >
+        <li class="nav-item">
+            <a
+                routerLink="/"
+                routerLinkActive
+                #rlaHome="routerLinkActive"
+                [routerLinkActiveOptions]="{ exact: true }"
+                [ngClass]="rlaHome.isActive ? 'text-white' : 'text-primary'"
+                class="nav-link text-primary align-middle px-0"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+                title="About"
+            >
+                <i [ngClass]="rlaHome.isActive ? 'fs-2' : 'fs-4'" class="bi bi-house-door"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a
+                routerLink="/skills"
+                routerLinkActive
+                #rlaSkills="routerLinkActive"
+                [routerLinkActiveOptions]="{ exact: true }"
+                [ngClass]="rlaSkills.isActive ? 'text-white' : 'text-primary'"
+                class="nav-link text-primary align-middle px-0"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+                title="Skills"
+            >
+                <i [ngClass]="rlaSkills.isActive ? 'fs-2' : 'fs-4'" class="bi bi-gear-wide-connected"></i>
+            </a>
+        </li>
+        <li>
+            <a
+                routerLink="/experience"
+                routerLinkActive
+                #rlaExperience="routerLinkActive"
+                [routerLinkActiveOptions]="{ exact: true }"
+                [ngClass]="rlaExperience.isActive ? 'text-white' : 'text-primary'"
+                class="nav-link text-primary px-0 align-middle"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+                title="Experience"
+            >
+                <i [ngClass]="rlaExperience.isActive ? 'fs-2' : 'fs-4'" class="bi bi-briefcase"></i
+            ></a>
+        </li>
+        <li>
+            <a
+                routerLink="/projects"
+                routerLinkActive
+                #rlaProjects="routerLinkActive"
+                [routerLinkActiveOptions]="{ exact: true }"
+                [ngClass]="rlaProjects.isActive ? 'text-white' : 'text-primary'"
+                class="nav-link text-primary px-0 align-middle"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+                title="Projects"
+            >
+                <i [ngClass]="rlaProjects.isActive ? 'fs-2' : 'fs-4'" class="bi bi-journals"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a
+                [href]="linkedInUrl"
+                class="nav-link text-primary align-middle px-0"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+                title="LinkedIn"
+                target="_blank"
+            >
+                <i class="fs-4 bi bi-linkedin"></i>
+            </a>
+        </li>
+        <li>
+            <a
+                [href]="githubUrl"
+                class="nav-link text-primary px-0 align-middle"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+                title="Github"
+                target="_blank"
+            >
+                <i class="fs-4 bi bi-github"></i>
+            </a>
+        </li>
+    </ul>
+</div>

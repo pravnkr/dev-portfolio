@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import '../node_modules/bootstrap/scss/functions';
+@import 'assets/scss/variable';
+
+$primary: $brand-primary;
+$secondary: $brand-secondary;
+$dark: $brand-dark;
+$body-bg: $brand-dark;
+$body-color: #fff;
+$offcanvas-horizontal-width: $offcanvas-horizontal-width;
+
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+@import '../node_modules/bootstrap/scss/root';
+@import '../node_modules/bootstrap/scss/reboot';
+@import '../node_modules/bootstrap/scss/type';
+@import '../node_modules/bootstrap/scss/offcanvas';

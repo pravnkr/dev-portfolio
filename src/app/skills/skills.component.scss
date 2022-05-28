@@ -1,0 +1,51 @@
+@use 'sass:color';
+@import 'src/assets/scss/variable';
+
+.skill-name {
+    letter-spacing: 0.2rem;
+}
+
+.text-grey {
+    color: #c0c5ca;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.w-60px {
+    width: 60px;
+}
+
+.skill-set-bar {
+    width: 100%;
+    height: 0.8rem;
+    background: color.adjust($brand-dark, $lightness: 10%);
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0 rgb(7 33 66 / 15%);
+    box-shadow: 0 5px 15px 0 rgb(90 118 154 / 15%);
+}
+
+.filled-bar {
+    // height: 0.8rem;
+    animation: ratio90 1.5s forwards;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    width: attr(data-width);
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#e5ebf4),
+        color-stop(42%, #8c2b7a),
+        to(#ff4d5a)
+    );
+    background-image: linear-gradient(to left, $brand-primary, #8c2b7a 42%, #ff4d5a);
+    background-image: linear-gradient(to left, $brand-primary, #8c2b7a 42%, #ff4d5a);
+    background-image: linear-gradient(to right, $brand-primary, #8c2b7a 42%, #ff4d5a);
+}
