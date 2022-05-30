@@ -1,0 +1,23 @@
+<div class="card bg-primary text-dark" style="width: 20rem">
+    <img [src]="imageUrl" class="card-img-top" alt="..." />
+    <div class="ms-2">
+        <span class="badge bg-success text-dark small-font me-1">{{ technology }}</span>
+        <span class="badge bg-danger small-font text-white">{{ language }}</span>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ feedTitle }}</h5>
+        <p class="card-text">{{ feedSummary }}</p>
+        <a [href]="feedUrl" target="_blank" class="btn btn-dark">Read More</a>
+    </div>
+    <div class="card-footer d-flex align-items-center">
+        <div style="width: 50px; height: 50px">
+            <img [src]="profileImgUrl" class="img-fluid rounded-circle" alt="..." />
+        </div>
+        <div class="ms-1">
+            <p class="m-0 p-0 fst-italic">Praveen Kumar</p>
+            <p class="m-0 p-0 text-muted small-font">
+                {{ feedDate }}
+            </p>
+        </div>
+    </div>
+</div>

@@ -63,6 +63,21 @@
                 <i [ngClass]="rlaProjects.isActive ? 'fs-2' : 'fs-4'" class="bi bi-journals"></i>
             </a>
         </li>
+        <li>
+            <a
+                routerLink="/blogs"
+                routerLinkActive
+                #rlaBlogs="routerLinkActive"
+                [routerLinkActiveOptions]="{ exact: true }"
+                [ngClass]="rlaBlogs.isActive ? 'text-white' : 'text-primary'"
+                class="nav-link text-primary px-0 align-middle"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+                title="Blogs"
+            >
+                <i [ngClass]="rlaBlogs.isActive ? 'fs-2' : 'fs-4'" class="bi bi-card-text"></i>
+            </a>
+        </li>
         <li class="nav-item">
             <a
                 [href]="linkedInUrl"
