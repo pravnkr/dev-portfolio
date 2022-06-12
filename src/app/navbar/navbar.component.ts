@@ -9,5 +9,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 export class NavbarComponent {
     linkedInUrl = 'https://www.linkedin.com/in/praveen-kumar-788429192';
     githubUrl = 'https://github.com/pravnkr';
+    navBarVisible = false;
     constructor() {}
 }

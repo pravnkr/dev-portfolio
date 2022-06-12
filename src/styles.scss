@@ -10,6 +10,9 @@ $dark: $brand-dark;
 $body-bg: $brand-dark;
 $body-color: #fff;
 $offcanvas-horizontal-width: $offcanvas-horizontal-width;
+$modal-content-color: #fff;
+$modal-content-bg: $brand-dark;
+$modal-header-border-color: $brand-primary;
 
 @import '../node_modules/bootstrap/scss/variables';
 @import '../node_modules/bootstrap/scss/mixins';
@@ -18,3 +21,7 @@ $offcanvas-horizontal-width: $offcanvas-horizontal-width;
 @import '../node_modules/bootstrap/scss/reboot';
 @import '../node_modules/bootstrap/scss/type';
 @import '../node_modules/bootstrap/scss/offcanvas';
+@import '../node_modules/bootstrap/scss/modal';
+@import '../node_modules/bootstrap/scss/buttons';
+@import '../node_modules/bootstrap/scss/navbar';
+@import '../node_modules/bootstrap/scss/nav';

@@ -1,4 +1,89 @@
-<div class="h-100">
+<nav class="d-md-none navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a routerLink="/" class="nav-link text-primary align-middle px-0">
+            <span
+                id="avatar"
+                class="d-inline-block text-center fw-bold border border-light border-3 rounded-circle bg-primary text-dark navbar-brand"
+                >PK</span
+            >
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            (click)="navBarVisible = !navBarVisible"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [ngClass]="{ show: navBarVisible }" id="menu-div">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a
+                        routerLink="/"
+                        routerLinkActive
+                        #rlaHome="routerLinkActive"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        [ngClass]="rlaHome.isActive ? 'text-white' : 'text-primary'"
+                        class="nav-link text-primary align-middle px-0"
+                        >About</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a
+                        routerLink="/skills"
+                        routerLinkActive
+                        #rlaSkills="routerLinkActive"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        [ngClass]="rlaSkills.isActive ? 'text-white' : 'text-primary'"
+                        class="nav-link text-primary align-middle px-0"
+                        >Skills</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a
+                        routerLink="/experience"
+                        routerLinkActive
+                        #rlaExperience="routerLinkActive"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        [ngClass]="rlaExperience.isActive ? 'text-white' : 'text-primary'"
+                        class="nav-link text-primary px-0 align-middle"
+                        >Experience</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a
+                        routerLink="/projects"
+                        routerLinkActive
+                        #rlaProjects="routerLinkActive"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        [ngClass]="rlaProjects.isActive ? 'text-white' : 'text-primary'"
+                        class="nav-link text-primary px-0 align-middle"
+                        >Projects</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a
+                        routerLink="/blogs"
+                        routerLinkActive
+                        #rlaBlogs="routerLinkActive"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        [ngClass]="rlaBlogs.isActive ? 'text-white' : 'text-primary'"
+                        class="nav-link text-primary px-0 align-middle"
+                        >Blogs</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a [href]="linkedInUrl" class="nav-link text-primary align-middle px-0" target="_blank">LinkedIn</a>
+                </li>
+                <li class="nav-item">
+                    <a [href]="githubUrl" class="nav-link text-primary px-0 align-middle" target="_blank">Github</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="d-none d-md-block h-100">
     <ul
         class="nav nav-pills h-100 flex-column mb-sm-auto mb-0 justify-content-evenly align-items-center align-items-sm-start"
         id="menu"

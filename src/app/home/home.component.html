@@ -1,19 +1,19 @@
-<div class="h-100">
-    <div class="d-flex flex-column justify-content-between h-100">
-        <div class="d-flex justify-content-between align-items-center">
-            <div>
+<div class="h-100 ps-md-4 ps-lg-0 home-root">
+    <div class="d-flex flex-column justify-content-between w-100 h-100">
+        <div class="d-flex justify-content-center justify-content-md-between align-items-center">
+            <div class="d-flex flex-column">
                 <div class="position-relative">
                     <h3 class="name poppins">Praveen Kumar</h3>
                     <h3 class="position-absolute top-0 start-0 name-overlapped poppins">Praveen Kumar</h3>
                 </div>
                 <div>
-                    <span class="badge bg-success text-dark me-2">Open to work</span>
-                    <span class="badge bg-warning text-dark me-2">Freelancer</span>
-                    <span class="badge bg-info text-dark me-2">Consultant</span>
+                    <span class="badge bg-success text-dark me-1 me-md-2">Open to work</span>
+                    <span class="badge bg-warning text-dark me-1 me-md-2">Freelancer</span>
+                    <span class="badge bg-info text-dark me-1 me-md-2">Consultant</span>
                     <span class="badge bg-danger text-white">Full stack developer</span>
                 </div>
             </div>
-            <div>
+            <div class="d-none d-md-block">
                 <div class="row">
                     <div class="col-auto">
                         <i class="fs-5 text-primary bi bi-envelope"></i>
@@ -28,34 +28,71 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-center">
-            <div>
-                <h1 class="font-monospace skill-h1 position-relative overflow-hidden">
-                    <span>Hire Me For:</span>
-                    <div class="skills d-block position-absolute overflow-hidden">
-                        <div *ngFor="let skill of skills" class="skill-name">{{ skill }}</div>
-                    </div>
-                </h1>
+        <div
+            id="hire-me-for-container"
+            class="d-flex flex-column mt-4 mt-md-0 align-items-center position-relative font-monospace h1 w-100"
+        >
+            <div class="hire-label">Hire Me For</div>
+            <div *ngFor="let skill of skills; let i = index" [id]="'skill' + i" class="position-absolute ml6">
+                <span class="text-wrapper position-relative d-inline-block overflow-hidden">
+                    <span class="letters">{{ skill }}</span>
+                </span>
             </div>
         </div>
-        <p class="lead lh-base">
+        <p class="lead mt-sm-2 mt-md-0 lh-base">
             I'm a New Delhi, India based Full stack developer with 3.5+ years of experience in developing micro
             services, REST driven API's and web based UI with smooth UX using tech stack like Spring-Boot, Angular and
-            NodeJs.Throughout my career I have worked with multiple agile teams and delivered successful products in
+            NodeJs. Throughout my career I have worked with multiple agile teams and delivered successful products in
             various domains like Automobile, Fintech, Law and Food based SaaS driven platforms.
         </p>
-        <div class="d-grid col-2 mx-auto">
+        <div class="d-grid col-9 col-sm-8 col-md-3 col-lg-2 mx-auto">
             <div class="row">
                 <button
                     #resumeBtn
-                    class="col slide bg-dark text-white fw-bold py-3 me-4"
+                    class="col-5 col-md-auto slide bg-dark text-white fw-bold py-3 me-4"
                     (click)="downloadResume(); resumeBtn.blur()"
                     type="button"
                 >
                     Download Resume
                 </button>
-                <!-- May be implement in future -->
-                <!-- <button class="col slide bg-dark text-white fw-bold py-3" type="button">Hire Me</button> -->
+
+                <button
+                    #hireMe
+                    class="d-md-none col-5 slide bg-dark text-white fw-bold py-3"
+                    type="button"
+                    (click)="hireMe.blur(); openContactMe()"
+                >
+                    Hire Me
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="contactMeModal" tabindex="-1" aria-labelledby="contactMeModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactMeModalLabel">Contact Me!</h5>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <div class="row">
+                        <div class="col-auto">
+                            <i class="fs-5 text-primary bi bi-envelope"></i>
+                        </div>
+                        <div class="col-auto fw-light fst-italic">{{ email }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            <i class="fs-5 text-primary bi bi-telephone"></i>
+                        </div>
+                        <div class="col-auto fw-light fst-italic">{{ mobile }}</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

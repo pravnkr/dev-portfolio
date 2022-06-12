@@ -1,10 +1,40 @@
 @import 'src/assets/scss/variable';
 
-.slide:hover,
-.slide:focus {
-    box-shadow: inset 13rem 0 0 0 $brand-primary;
-    border-color: $brand-primary;
-    color: $brand-dark !important;
+.home-root {
+    @media screen and (min-width: 992px) and (max-width: 1050px) {
+        margin-left: 15px;
+    }
+}
+
+#hire-me-for-container {
+    height: 65px;
+
+    @media screen and (min-width: 768px) {
+        height: 102px;
+    }
+}
+
+.slide {
+    &:hover,
+    &:focus {
+        box-shadow: inset 13rem 0 0 0 $brand-primary;
+        border-color: $brand-primary;
+        color: $brand-dark !important;
+    }
+
+    font-size: 0.49rem;
+
+    @media screen and (min-width: 576px) {
+        font-size: 0.64rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 0.7rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+        font-size: 1rem;
+    }
 }
 
 button {
@@ -26,199 +56,92 @@ button {
 }
 
 .poppins {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins, sans-serif;
 }
 
 .name {
-    font-size: 6rem;
+    font-size: 1.5rem;
+    margin-top: 10px;
     color: transparent;
-    -webkit-text-stroke: 2px $brand-primary;
+    -webkit-text-stroke: 1px $brand-primary;
+
+    @media screen and (min-width: 768px) {
+        margin: 0;
+        font-size: 2.5rem;
+        -webkit-text-stroke: 2px $brand-primary;
+    }
+
+    @media screen and (min-width: 992px) {
+        font-size: 4rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+        font-size: 6rem;
+    }
 }
 
 .name-overlapped {
-    font-size: 6rem;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        margin: 0;
+        display: block;
+        font-size: 2.5rem;
+        color: $brand-primary;
+        animation: animate 2s ease-in-out infinite;
+    }
+
+    @media screen and (min-width: 992px) {
+        font-size: 4rem;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 6rem;
+    }
+}
+
+.badge {
+    font-size: 0.5rem;
+
+    @media screen and (min-width: 768px) {
+        font-size: 0.6rem;
+    }
+
+    @media screen and (min-width: 992px) {
+        font-size: 0.75rem;
+    }
+}
+
+.hire-label {
+    font-size: 1.5rem;
+    @media screen and (min-width: 768px) {
+        font-size: calc(1.375rem + 1.5vw);
+    }
+}
+
+.ml6 {
+    top: 26px;
+    font-size: 1.6rem;
     color: $brand-primary;
-    animation: animate 2s ease-in-out infinite;
+
+    @media screen and (min-width: 326px) {
+        font-size: 2rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        top: 50px;
+        font-size: 2.8rem;
+    }
 }
 
-.skill-h1 {
-    width: 600px;
+.ml6 .letter {
+    line-height: 1rem;
 }
 
-.skills {
-    // background-color: yellow;
-    color: $brand-primary;
-    font-weight: 900;
-    animation: openclose 25s ease-in-out infinite;
-    left: 275px;
-}
-
-@keyframes openclose {
-    0% {
-        top: 0;
-        width: 0;
-    }
-
-    3% {
-        top: 0;
-        width: 230px;
-    }
-
-    6% {
-        top: 0;
-        width: 0;
-    }
-
-    9% {
-        top: -3rem;
-        width: 0;
-    }
-
-    12% {
-        top: -3rem;
-        width: 300px;
-    }
-
-    15% {
-        top: -3rem;
-        width: 0;
-    }
-
-    18% {
-        top: -6rem;
-        width: 0;
-    }
-
-    21% {
-        top: -6rem;
-        width: 300px;
-    }
-
-    24% {
-        top: -6rem;
-        width: 0;
-    }
-
-    27% {
-        top: -9rem;
-        width: 0;
-    }
-
-    30% {
-        top: -9rem;
-        width: 300px;
-    }
-
-    33% {
-        top: -9rem;
-        width: 0;
-    }
-
-    36% {
-        top: -12rem;
-        width: 0;
-    }
-
-    39% {
-        top: -12rem;
-        width: 230px;
-    }
-
-    42% {
-        top: -12rem;
-        width: 0;
-    }
-
-    45% {
-        top: -15rem;
-        width: 0;
-    }
-
-    48% {
-        top: -15rem;
-        width: 230px;
-    }
-
-    52% {
-        top: -15rem;
-        width: 0;
-    }
-
-    55% {
-        top: -18rem;
-        width: 0;
-    }
-
-    58% {
-        top: -18rem;
-        width: 230px;
-    }
-
-    61% {
-        top: -18rem;
-        width: 0;
-    }
-
-    64% {
-        top: -21rem;
-        width: 0;
-    }
-
-    67% {
-        top: -21rem;
-        width: 230px;
-    }
-
-    70% {
-        top: -21rem;
-        width: 0;
-    }
-
-    73% {
-        top: -24rem;
-        width: 0;
-    }
-
-    76% {
-        top: -24rem;
-        width: 230px;
-    }
-
-    79% {
-        top: -24rem;
-        width: 0;
-    }
-
-    82% {
-        top: -27rem;
-        width: 0;
-    }
-
-    85% {
-        top: -27rem;
-        width: 230px;
-    }
-
-    88% {
-        top: -27rem;
-        width: 0;
-    }
-
-    91% {
-        top: -30rem;
-        width: 0;
-    }
-
-    94% {
-        top: -30rem;
-        width: 230px;
-    }
-
-    97% {
-        top: -30rem;
-        width: 0;
-    }
+.ml6 .text-wrapper {
+    padding-top: 0.2rem;
+    padding-right: 0.05rem;
+    padding-bottom: 0.1rem;
 }
