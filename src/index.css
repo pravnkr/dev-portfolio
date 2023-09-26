@@ -19,6 +19,7 @@ code {
 html,
 body {
   scroll-behavior: smooth;
+  --cursor-color: #333;
 }
 body {
   margin: 0;
@@ -33,4 +34,8 @@ body {
     font-size: rem;
     line-height: normal;
   }
+}
+
+* {
+  cursor: none;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./AchievementCard.scss";
+import {useCursorChange} from "../../hooks/useCursorChange";
 
 export default function AchievementCard({cardInfo, isDark}) {
   function openUrlInNewTab(url, name) {
@@ -10,6 +11,7 @@ export default function AchievementCard({cardInfo, isDark}) {
     var win = window.open(url, "_blank");
     win.focus();
   }
+  const cursorChange = useCursorChange();
 
   return (
     <div className={isDark ? "dark-mode certificate-card" : "certificate-card"}>
@@ -37,6 +39,7 @@ export default function AchievementCard({cardInfo, isDark}) {
                 isDark ? "dark-mode certificate-tag" : "certificate-tag"
               }
               onClick={() => openUrlInNewTab(v.url, v.name)}
+              {...cursorChange}
             >
               {v.name}
             </span>

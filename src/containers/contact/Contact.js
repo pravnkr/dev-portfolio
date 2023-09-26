@@ -6,9 +6,11 @@ import {Fade} from "react-reveal";
 import email from "../../assets/lottie/email";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
+import {useCursorChange} from "../../hooks/useCursorChange";
 
 export default function Contact() {
   const {isDark} = useContext(StyleContext);
+  const cursorChange = useCursorChange();
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main contact-margin-top" id="contact">
@@ -34,6 +36,7 @@ export default function Contact() {
                   <a
                     className="contact-detail"
                     href={"tel:" + contactInfo.number}
+                    {...cursorChange}
                   >
                     {contactInfo.number}
                   </a>
@@ -44,6 +47,7 @@ export default function Contact() {
               <a
                 className="contact-detail-email"
                 href={"mailto:" + contactInfo.email_address}
+                {...cursorChange}
               >
                 {contactInfo.email_address}
               </a>

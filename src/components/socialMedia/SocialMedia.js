@@ -1,8 +1,10 @@
 import React from "react";
 import "./SocialMedia.scss";
 import {socialMediaLinks} from "../../portfolio";
+import {useCursorChange} from "../../hooks/useCursorChange";
 
-export default function socialMedia() {
+export default function SocialMedia() {
+  const cursorChange = useCursorChange();
   if (!socialMediaLinks.display) {
     return null;
   }
@@ -14,6 +16,7 @@ export default function socialMedia() {
           className="icon-button github"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fab fa-github"></i>
           <span></span>
@@ -26,6 +29,7 @@ export default function socialMedia() {
           className="icon-button linkedin"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fab fa-linkedin-in"></i>
           <span></span>
@@ -38,6 +42,7 @@ export default function socialMedia() {
           className="icon-button google"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fas fa-envelope"></i>
           <span></span>
@@ -50,6 +55,7 @@ export default function socialMedia() {
           className="icon-button gitlab"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fab fa-gitlab"></i>
           <span></span>
@@ -62,6 +68,7 @@ export default function socialMedia() {
           className="icon-button facebook"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fab fa-facebook-f"></i>
           <span></span>
@@ -74,6 +81,7 @@ export default function socialMedia() {
           className="icon-button instagram"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fab fa-instagram"></i>
           <span></span>
@@ -86,6 +94,7 @@ export default function socialMedia() {
           className="icon-button twitter"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fab fa-twitter"></i>
           <span></span>
@@ -98,6 +107,7 @@ export default function socialMedia() {
           className="icon-button medium"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fab fa-medium"></i>
           <span></span>
@@ -110,6 +120,7 @@ export default function socialMedia() {
           className="icon-button stack-overflow"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fab fa-stack-overflow"></i>
           <span></span>
@@ -122,6 +133,7 @@ export default function socialMedia() {
           className="icon-button kaggle"
           target="_blank"
           rel="noopener noreferrer"
+          {...cursorChange}
         >
           <i className="fab fa-kaggle"></i>
           <span></span>

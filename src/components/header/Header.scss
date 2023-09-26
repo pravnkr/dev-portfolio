@@ -47,7 +47,12 @@
 
 .header li a:hover,
 .header .menu-btn:hover {
-  background-color: $headerHoverBG;
+  background-color: $buttonColor;
+  color: white;
+}
+
+.html-tag {
+  color: $buttonColor;
 }
 
 .header .logo {

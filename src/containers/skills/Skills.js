@@ -45,6 +45,28 @@ export default function Skills() {
             </p>
             <SoftwareSkill />
             <div>
+              <h1
+                className={
+                  isDark ? "dark-mode skills-heading" : "skills-heading"
+                }
+              >
+                🌐 Contributions
+              </h1>
+              <p
+                className={
+                  isDark
+                    ? "dark-mode subTitle skills-text"
+                    : "subTitle skills-text"
+                }
+              >
+                Having contributed to a diverse range of projects, I have honed
+                my ability to deliver solutions that meet the unique needs and
+                goals of each client. My experience spans across various
+                domains, allowing me to adapt and align my skills with the
+                evolving demands of the tech industry.
+              </p>
+            </div>
+            <div>
               {skillsSection.skills.map((skills, i) => {
                 return (
                   <p

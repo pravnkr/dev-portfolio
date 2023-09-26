@@ -1,5 +1,6 @@
 import React from "react";
 import "./BlogCard.scss";
+import {useCursorChange} from "../../hooks/useCursorChange";
 
 export default function BlogCard({blog, isDark}) {
   function openUrlInNewTab(url, name) {
@@ -10,9 +11,13 @@ export default function BlogCard({blog, isDark}) {
     var win = window.open(url, "_blank");
     win.focus();
   }
+  const cursorChange = useCursorChange();
 
   return (
-    <div onClick={() => openUrlInNewTab(blog.url, blog.title)}>
+    <div
+      onClick={() => openUrlInNewTab(blog.url, blog.title)}
+      {...cursorChange}
+    >
       <div className={isDark ? "blog-container dark-mode" : "blog-container"}>
         <a
           className={

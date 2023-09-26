@@ -58,6 +58,10 @@
   transform-origin: 70% 70%;
 }
 
+.html-tag {
+  color: $buttonColor;
+}
+
 @keyframes wave {
   0% {
     transform: rotate(0deg);

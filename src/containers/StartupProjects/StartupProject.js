@@ -3,6 +3,7 @@ import "./StartupProjects.scss";
 import {bigProjects} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import {useCursorChange} from "../../hooks/useCursorChange";
 
 export default function StartupProject() {
   function openUrlInNewTab(url) {
@@ -14,6 +15,7 @@ export default function StartupProject() {
   }
 
   const {isDark} = useContext(StyleContext);
+  const cursorChange = useCursorChange();
   if (!bigProjects.display) {
     return null;
   }
@@ -75,6 +77,7 @@ export default function StartupProject() {
                                 isDark ? "dark-mode project-tag" : "project-tag"
                               }
                               onClick={() => openUrlInNewTab(link.url)}
+                              {...cursorChange}
                             >
                               {link.name}
                             </span>

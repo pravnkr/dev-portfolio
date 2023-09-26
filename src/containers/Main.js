@@ -20,6 +20,7 @@ import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
+import DotRing from "../components/DotRing/DotRing";
 
 const Main = () => {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
@@ -50,6 +51,7 @@ const Main = () => {
           <SplashScreen />
         ) : (
           <>
+            <DotRing />
             <Header />
             <Greeting />
             <Skills />

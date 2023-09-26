@@ -1,5 +1,6 @@
 import React from "react";
 import "./Top.scss";
+import {useCursorChange} from "../../hooks/useCursorChange";
 
 export default function Top() {
   function TopEvent() {
@@ -24,8 +25,14 @@ export default function Top() {
     scrollFunction();
   }; //To make sure that this button is not visible at starting.
   // When the user clicks on the button, scroll to the top of the document
+  const cursorChange = useCursorChange();
   return (
-    <button onClick={TopEvent} id="topButton" title="Go to top">
+    <button
+      onClick={TopEvent}
+      id="topButton"
+      title="Go to top"
+      {...cursorChange}
+    >
       <i className="fas fa-hand-point-up" aria-hidden="true"></i>
     </button>
   );
