@@ -6,7 +6,6 @@ import StyleContext from "../../contexts/StyleContext";
 
 const DotRing = () => {
   const {isDark} = useContext(StyleContext);
-  console.log(isDark);
   const {cursorType} = useContext(MouseContext);
 
   const {x, y} = useMousePosition();
