@@ -25,8 +25,7 @@ const greeting = {
   subTitle: emoji(
     "I am a dedicated and passionate Full Stack Developer 🚀 with a predominant focus on backend technologies. With extensive experience in crafting high-quality Web and Mobile applications, I specialize in robust and scalable solutions that power impactful user experiences."
   ),
-  resumeLink:
-    "https://pravnkr.github.io/dev-portfolio/Praveen-Resume.pdf", // Set to empty to hide the button
+  resumeLink: "https://pravnkr.github.io/dev-portfolio/Praveen-Resume.pdf", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
