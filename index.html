@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praveen Kumar — Lead Software Engineer</title>
+<meta name="description" content="Praveen Kumar — Lead Software Engineer building financial systems for Private Equity and applied AI solutions. Specializing in MCP servers, RAG pipelines, and multi-agent workflows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #0B0B0B;
+    --bg-card:     #111111;
+    --bg-card2:    #161616;
+    --border:      rgba(255,255,255,0.07);
+    --border-h:    rgba(255,255,255,0.13);
+    --amber:       #F59E0B;
+    --amber-dim:   rgba(245,158,11,0.10);
+    --emerald:     #10B981;
+    --emerald-dim: rgba(16,185,129,0.10);
+    --text:        #F0EDE8;
+    --text2:       #9A9893;
+    --text3:       #4E4D4B;
+    --font-h:      'Sora', system-ui, sans-serif;
+    --font-b:      'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-m:      'JetBrains Mono', monospace;
+    --max:         1080px;
+    --r:           12px;
+    --rs:          8px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-b);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 100;
+    background: rgba(11,11,11,0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--font-h);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text2);
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+  .nav-cta {
+    font-family: var(--font-m);
+    font-size: 12px;
+    color: var(--amber);
+    border: 1px solid rgba(245,158,11,0.3);
+    background: var(--amber-dim);
+    padding: 7px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.18s;
+  }
+
+  .nav-cta:hover { background: rgba(245,158,11,0.18); border-color: rgba(245,158,11,0.5); }
+
+  /* LAYOUT */
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+  section { padding: 100px 0; }
+
+  .eyebrow {
+    font-family: var(--font-m);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--amber); }
+
+  .section-h {
+    font-family: var(--font-h);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  .section-h span { font-weight: 300; color: var(--text2); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 65% 50%, black 20%, transparent 75%);
+  }
+
+  #hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 50% 50% at 75% 50%, rgba(245,158,11,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    padding: 80px 0;
+  }
+
+  .hero-left { flex: 1; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--text2);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-h);
+    padding: 5px 14px;
+    border-radius: 40px;
+    margin-bottom: 32px;
+    letter-spacing: 0.06em;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.2s forwards;
+  }
+
+  .hero-name {
+    font-family: var(--font-h);
+    font-size: clamp(52px, 7.5vw, 92px);
+    font-weight: 600;
+    line-height: 1.0;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.35s forwards;
+  }
+
+  .hero-name .dim { font-weight: 300; color: var(--text2); }
+
+  .hero-role {
+    font-family: var(--font-m);
+    font-size: 12px;
+    color: var(--text3);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.5s forwards;
+  }
+
+  .hero-bio {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text2);
+    line-height: 1.85;
+    max-width: 560px;
+    margin-bottom: 44px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.65s forwards;
+  }
+
+  .hero-bio strong { font-weight: 500; color: var(--text); }
+
+  .hero-btns {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.8s forwards;
+  }
+
+  .btn-primary {
+    font-family: var(--font-b);
+    font-size: 14px;
+    font-weight: 500;
+    color: #0B0B0B;
+    background: var(--text);
+    padding: 12px 22px;
+    border-radius: var(--rs);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.18s;
+  }
+
+  .btn-primary:hover { background: #e0ddd8; transform: translateY(-1px); }
+
+  .btn-ghost {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text2);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.18s;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+  }
+
+  .btn-ghost:hover { color: var(--text); border-color: var(--text3); }
+
+  /* Stat cards */
+  .hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex-shrink: 0;
+    opacity: 0;
+    animation: fadeIn 0.6s ease 1.0s forwards;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 156px;
+    transition: border-color 0.18s;
+  }
+
+  .stat-card:first-child { border-radius: var(--r) var(--r) 0 0; }
+  .stat-card:last-child  { border-radius: 0 0 var(--r) var(--r); }
+  .stat-card:hover { border-color: var(--border-h); }
+
+  .stat-num {
+    font-family: var(--font-h);
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 4px;
+  }
+
+  .stat-lbl {
+    font-family: var(--font-m);
+    font-size: 10.5px;
+    color: var(--text3);
+    letter-spacing: 0.05em;
+    text-align: right;
+  }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  /* ABOUT */
+  #about {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 88px 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-h {
+    font-family: var(--font-h);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text);
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+
+  .about-h span { font-weight: 300; color: var(--text2); }
+
+  .about-p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text2);
+    line-height: 1.85;
+    margin-bottom: 16px;
+  }
+
+  .about-p:last-child { margin-bottom: 0; }
+  .about-p strong { font-weight: 500; color: var(--text); }
+
+  /* WORK */
+  #work { padding: 100px 0; }
+
+  .work-header { margin-bottom: 56px; }
+
+  .work-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+
+  .work-item:last-child { border-bottom: 1px solid var(--border); }
+  .work-item.visible { opacity: 1; transform: translateY(0); }
+
+  .work-label {
+    padding-top: 3px;
+  }
+
+  .work-type {
+    font-family: var(--font-m);
+    font-size: 10.5px;
+    color: var(--amber);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .work-co {
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.04em;
+  }
+
+  .work-title {
+    font-family: var(--font-h);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .work-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text2);
+    line-height: 1.78;
+    margin-bottom: 16px;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .tag {
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--text2);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  .tag.hi {
+    color: var(--amber);
+    background: var(--amber-dim);
+    border-color: rgba(245,158,11,0.18);
+  }
+
+  /* EXPERIENCE */
+  #experience {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 100px 0;
+  }
+
+  .exp-header { margin-bottom: 56px; }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 148px 1fr;
+    gap: 36px;
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+
+  .exp-item:last-child { border-bottom: 1px solid var(--border); }
+  .exp-item.visible { opacity: 1; transform: translateY(0); }
+
+  .exp-period {
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--text3);
+    padding-top: 3px;
+    letter-spacing: 0.04em;
+  }
+
+  .exp-title {
+    font-family: var(--font-h);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 3px;
+    letter-spacing: -0.01em;
+  }
+
+  .exp-co {
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .exp-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text2);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  /* SKILLS */
+  #skills { padding: 100px 0; }
+
+  .skills-header { margin-bottom: 48px; }
+
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 40px;
+  }
+
+  .sg {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .sg.visible { opacity: 1; transform: translateY(0); }
+
+  .sg-title {
+    font-family: var(--font-m);
+    font-size: 10.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sg-items { display: flex; flex-direction: column; gap: 7px; }
+
+  .sg-item {
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--text2);
+  }
+
+  .sg-item.hi { font-weight: 500; color: var(--text); }
+
+  .sg-item.dim {
+    font-size: 12px;
+    color: var(--text3);
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 100px 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-h {
+    font-family: var(--font-h);
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--text);
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+
+  .contact-h span { font-weight: 300; color: var(--text2); }
+
+  .contact-p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text2);
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 8px; }
+
+  .c-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--rs);
+    text-decoration: none;
+    color: var(--text2);
+    background: var(--bg);
+    transition: all 0.18s;
+  }
+
+  .c-link:hover { border-color: var(--border-h); color: var(--text); transform: translateX(4px); }
+
+  .c-link-lbl { font-family: var(--font-m); font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 3px; }
+  .c-link-val { font-size: 13.5px; color: var(--text2); }
+  .c-link-arr { font-size: 13px; color: var(--text3); transition: transform 0.18s; }
+  .c-link:hover .c-link-arr { transform: translateX(3px); color: var(--text2); }
+
+  /* Note card */
+  .note-card {
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    overflow: hidden;
+  }
+
+  .note-top {
+    background: rgba(255,255,255,0.02);
+    padding: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .note-label {
+    font-family: var(--font-m);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 14px;
+  }
+
+  .note-title {
+    font-family: var(--font-h);
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  .note-desc {
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--text2);
+    line-height: 1.75;
+  }
+
+  .note-bot { padding: 22px 32px; }
+
+  .note-email {
+    font-family: var(--font-m);
+    font-size: 13px;
+    color: var(--amber);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .note-email:hover { text-decoration: underline; }
+
+  a.work-link { text-decoration: none; }
+  a.work-link .work-title { transition: color 0.18s; }
+  a.work-link:hover .work-title { color: var(--amber); }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 24px 40px; }
+
+  .footer-in {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p, footer a {
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: #787775;
+    text-decoration: none;
+  }
+
+  footer a:hover { color: var(--text2); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 880px) {
+    .wrap { padding: 0 24px; }
+    .nav-inner { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero-wrap { flex-direction: column; align-items: flex-start; padding: 60px 0; }
+    .hero-stats { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .work-item { grid-template-columns: 1fr; gap: 12px; }
+    .exp-item { grid-template-columns: 1fr; gap: 8px; }
+    .skill-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    footer { padding: 20px 24px; }
+    .footer-in { flex-direction: column; gap: 8px; }
+  }
+
+  @media (max-width: 520px) {
+    .skill-grid { grid-template-columns: 1fr; }
+    .hero-name { font-size: 46px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Praveen Kumar</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">say hello</a>
+  </div>
+</nav>
+
+<main>
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-wrap">
+      <div class="hero-left">
+        <div class="hero-badge">Lead SE · dealsplus.io · Greater Noida</div>
+        <h1 class="hero-name">Praveen<br><span class="dim">Kumar</span></h1>
+        <p class="hero-role">Software Engineer · PE SaaS · Applied AI</p>
+        <p class="hero-bio">
+          I build <strong>financial systems for Private Equity</strong> and spend a lot of time in
+          <strong>applied AI</strong> — custom MCP servers, RAG pipelines, agents with institutional
+          knowledge, and in-app AI wired into real product workflows.
+          The two have started converging in interesting ways.
+        </p>
+        <div class="hero-btns">
+          <a href="#work" class="btn-primary">
+            View work
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 2l4.5 4.5L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://github.com/pravnkr" target="_blank" class="btn-ghost">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-num">7+</div>
+          <div class="stat-lbl">Engineers led</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">5+</div>
+          <div class="stat-lbl">Years building</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">PE</div>
+          <div class="stat-lbl">Domain</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="eyebrow">About</p>
+        <h2 class="about-h">A bit about<br><span>what I do</span></h2>
+      </div>
+      <div>
+        <p class="about-p reveal">
+          I lead backend engineering at <strong>dealsplus.io</strong>, a Private Equity platform
+          where fund managers model ownership structures, run valuations, and manage deal data.
+          My team of seven ships across a Java/Spring Boot and React stack, with MySQL at the core.
+        </p>
+        <p class="about-p reveal">
+          Alongside that, I've been going deep on <strong>applied AI</strong> — not as a side
+          interest but as a core part of how I build. That means custom MCP server implementations,
+          RAG systems with domain-specific knowledge, multi-agent workflows using LangGraph and
+          DeepAgents, and in-app chatbots that understand product context and can act within it.
+        </p>
+        <p class="about-p reveal">
+          These days I move between <strong>Java and Python</strong> depending on what the problem
+          calls for. Most of the AI work is Python. Most of the financial engine work is Java.
+          Some of the more interesting problems sit right at the boundary.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="work-header reveal">
+      <p class="eyebrow">Work</p>
+      <h2 class="section-h">Things I've <span>built</span></h2>
+    </div>
+
+    <div class="work-item">
+      <div class="work-label">
+        <p class="work-type">Applied AI</p>
+        <p class="work-co">dealsplus.io</p>
+      </div>
+      <div>
+        <p class="work-title">DealsPlus MCP Server</p>
+        <p class="work-desc">
+          Custom MCP implementation that exposes live deal, investor, and cap table data to
+          external AI platforms — including Claude — with OAuth, client-scoped access control,
+          and SSE transport. PE analysts can query their own data conversationally without
+          leaving their workflow. One of the more interesting problems I've worked on: making
+          proprietary financial data safely accessible to an external reasoning layer.
+        </p>
+        <div class="tags">
+          <span class="tag hi">MCP</span>
+          <span class="tag hi">OAuth</span>
+          <span class="tag hi">SSE</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Claude API</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-label">
+        <p class="work-type">Applied AI</p>
+        <p class="work-co">dealsplus.io</p>
+      </div>
+      <div>
+        <p class="work-title">AI Agent with Institutional Knowledge</p>
+        <p class="work-desc">
+          RAG-backed agent trained on platform domain knowledge and client-specific deal data.
+          Wired into product workflows so it can answer questions about specific structures,
+          investors, and deals in context — not generic finance answers. The hard part was
+          getting retrieval to respect client data boundaries while staying useful.
+        </p>
+        <div class="tags">
+          <span class="tag hi">RAG</span>
+          <span class="tag hi">LangChain</span>
+          <span class="tag hi">LangGraph</span>
+          <span class="tag">Python</span>
+          <span class="tag">Vector DB</span>
+          <span class="tag">FastAPI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-label">
+        <p class="work-type">Applied AI</p>
+        <p class="work-co">dealsplus.io</p>
+      </div>
+      <div>
+        <p class="work-title">In-app AI Chatbot</p>
+        <p class="work-desc">
+          End-to-end chatbot integration that understands what the user is currently looking at
+          and can take actions within the product — not just a floating widget bolted on. Built
+          the workflow integration layer so the AI can operate in context rather than in isolation.
+        </p>
+        <div class="tags">
+          <span class="tag hi">LangGraph</span>
+          <span class="tag hi">DeepAgents</span>
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">React</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-label">
+        <p class="work-type">Financial Engine</p>
+        <p class="work-co">dealsplus.io</p>
+      </div>
+      <div>
+        <p class="work-title">Cap Table Engine</p>
+        <p class="work-desc">
+          Calculation engine that models ownership across complex multi-round structures —
+          tracking share classes, investor stakes, and how dilution plays out as new rounds
+          come in. Built to stay correct as cap tables get messy in the real world, which
+          they always do.
+        </p>
+        <div class="tags">
+          <span class="tag hi">Java</span>
+          <span class="tag hi">Spring Boot</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Financial modelling</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-label">
+        <p class="work-type">Financial Engine</p>
+        <p class="work-co">dealsplus.io</p>
+      </div>
+      <div>
+        <p class="work-title">Valuation Engine</p>
+        <p class="work-desc">
+          Integrated Excel-compatible valuation models directly into the platform, making
+          complex financial modelling feel native to the product rather than bolted on.
+          Handles the kind of nested conditional logic that PE valuation models tend to accumulate
+          over years of use.
+        </p>
+        <div class="tags">
+          <span class="tag hi">Java</span>
+          <span class="tag hi">Spring Boot</span>
+          <span class="tag">Financial modelling</span>
+          <span class="tag">Excel compatibility</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-label">
+        <p class="work-type">Integration</p>
+        <p class="work-co">dealsplus.io</p>
+      </div>
+      <div>
+        <p class="work-title">DealsPlus Excel Integration</p>
+        <p class="work-desc">
+          Built the integration layer that connects dealsplus directly with Excel, letting
+          users work in a tool they're already comfortable with while keeping data in sync
+          with the platform. PE professionals live in Excel — meeting them there rather than
+          asking them to change workflows was the whole point.
+        </p>
+        <div class="tags">
+          <span class="tag hi">Java</span>
+          <span class="tag hi">Spring Boot</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Data sync</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="exp-header reveal">
+      <p class="eyebrow">Experience</p>
+      <h2 class="section-h">Where I've <span>worked</span></h2>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">Sept 2022 — Present</div>
+      <div>
+        <p class="exp-title">Lead Software Engineer</p>
+        <p class="exp-co">DealsPlus</p>
+        <p class="exp-desc">
+          Leading a 7-person backend team building a Private Equity SaaS platform. Own architecture,
+          sprint planning, and system reliability. Still hands-on — the cap table engine, valuation
+          engine, MCP server, and most of the AI work all came out of this role.
+        </p>
+        <div class="tags">
+          <span class="tag hi">Spring Boot 3</span>
+          <span class="tag hi">Python</span>
+          <span class="tag hi">Applied AI</span>
+          <span class="tag">React</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Team leadership</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">May 2021 — Aug 2022</div>
+      <div>
+        <p class="exp-title">Sr. Full-Stack Engineer</p>
+        <p class="exp-co">Cresitatech</p>
+        <p class="exp-desc">
+          Backend and frontend development on a law-domain SaaS ERP built on Spring Boot.
+          Involved in system design, peer code reviews, and driving coding standards across the team.
+        </p>
+        <div class="tags">
+          <span class="tag hi">Spring Boot</span>
+          <span class="tag hi">Java</span>
+          <span class="tag">Microservices</span>
+          <span class="tag">Angular</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">Mar 2020 — May 2021</div>
+      <div>
+        <p class="exp-title">Full-Stack Engineer</p>
+        <p class="exp-co">Logicsoft</p>
+        <p class="exp-desc">
+          Worked on a food safety compliance platform for FSSAI — a large-scale system with
+          a substantial user base. Built microservices and REST APIs across a polyglot stack,
+          with Java on the backend and Node.js on the frontend side.
+        </p>
+        <div class="tags">
+          <span class="tag hi">Java</span>
+          <span class="tag hi">Spring Boot</span>
+          <span class="tag hi">Microservices</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">Jan 2019 — Mar 2020</div>
+      <div>
+        <p class="exp-title">Software Engineer</p>
+        <p class="exp-co">AutoBrix</p>
+        <p class="exp-desc">
+          Early-career role at an automobile-domain startup that successfully exited.
+          Worked across Spring and Angular projects, contributing to both backend and
+          frontend delivery across the full development lifecycle.
+        </p>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring MVC</span>
+          <span class="tag">Angular</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="skills-header reveal">
+      <p class="eyebrow">Skills</p>
+      <h2 class="section-h">Technical <span>toolkit</span></h2>
+    </div>
+    <div class="skill-grid">
+
+      <div class="sg">
+        <p class="sg-title">AI / Agents</p>
+        <div class="sg-items">
+          <span class="sg-item hi">LangChain · LangGraph</span>
+          <span class="sg-item hi">DeepAgents</span>
+          <span class="sg-item hi">RAG pipelines</span>
+          <span class="sg-item hi">MCP (custom servers)</span>
+          <span class="sg-item">Claude API</span>
+          <span class="sg-item">FastAPI</span>
+          <span class="sg-item dim">Azure AI Foundry · AWS Bedrock · Ollama — model APIs, not infra</span>
+        </div>
+      </div>
+
+      <div class="sg">
+        <p class="sg-title">Backend</p>
+        <div class="sg-items">
+          <span class="sg-item hi">Java</span>
+          <span class="sg-item hi">Python</span>
+          <span class="sg-item hi">Spring Boot 3.x</span>
+          <span class="sg-item">Hibernate 6 · HikariCP</span>
+          <span class="sg-item">QueryDSL · Gradle</span>
+          <span class="sg-item">Node.js</span>
+        </div>
+      </div>
+
+      <div class="sg">
+        <p class="sg-title">Databases</p>
+        <div class="sg-items">
+          <span class="sg-item hi">MySQL</span>
+          <span class="sg-item hi">PostgreSQL</span>
+          <span class="sg-item">MongoDB</span>
+          <span class="sg-item dim">pgvector · Qdrant — conceptually solid, not production-deep</span>
+        </div>
+      </div>
+
+      <div class="sg">
+        <p class="sg-title">Frontend</p>
+        <div class="sg-items">
+          <span class="sg-item">React · TypeScript</span>
+          <span class="sg-item dim">Enough to integrate and not break things</span>
+        </div>
+      </div>
+
+      <div class="sg">
+        <p class="sg-title">Infrastructure</p>
+        <div class="sg-items">
+          <span class="sg-item">Kubernetes · Docker</span>
+          <span class="sg-item">GitHub Actions</span>
+          <span class="sg-item">AWS · Azure</span>
+          <span class="sg-item dim">Deployment and wiring, not deep ops</span>
+        </div>
+      </div>
+
+      <div class="sg">
+        <p class="sg-title">Currently exploring</p>
+        <div class="sg-items">
+          <span class="sg-item">Multi-agent systems</span>
+          <span class="sg-item">Institutional memory across sessions</span>
+          <span class="sg-item">Human-in-the-loop agent design</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 0;">
+  <div class="wrap">
+    <div class="work-header reveal">
+      <p class="eyebrow">Writing</p>
+      <h2 class="section-h">On <span>Medium</span></h2>
+    </div>
+
+    <div class="work-item">
+      <div class="work-label">
+        <p class="work-type">Technical</p>
+        <p class="work-co">Mar 2024</p>
+      </div>
+      <div>
+        <a href="https://medium.com/@iampraveenkumar/mastering-jpa-inheritance-strategies-hibernate-6-x-jpa-3-x-spring-boot-3-x-06eecac1147a" target="_blank" class="work-link">
+          <p class="work-title">Mastering JPA Inheritance Strategies: Hibernate 6.x, JPA 3.x, Spring Boot 3.x ↗</p>
+        </a>
+        <p class="work-desc">
+          A deep dive into JPA inheritance strategies — single table, joined, and table-per-class —
+          using a Private Equity fund structure as the real-world domain. Covers when each strategy
+          makes sense and how to implement them correctly in a Spring Boot 3 application.
+        </p>
+        <div class="tags">
+          <span class="tag hi">Spring Boot 3</span>
+          <span class="tag hi">Hibernate 6</span>
+          <span class="tag">JPA</span>
+          <span class="tag">PE domain</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-label">
+        <p class="work-type">Technical</p>
+        <p class="work-co">Jun 2022</p>
+      </div>
+      <div>
+        <a href="https://medium.com/@iampraveenkumar/implementing-a-map-strategy-pattern-with-angular-13-bd06065bad50" target="_blank" class="work-link">
+          <p class="work-title">Implementing a Map Strategy Pattern With Angular 13+ ↗</p>
+        </a>
+        <p class="work-desc">
+          How to replace sprawling if/else chains with a clean map-based strategy pattern in Angular,
+          using dependency injection and InjectionToken. Includes a working implementation
+          with a message translator as the example.
+        </p>
+        <div class="tags">
+          <span class="tag hi">Angular</span>
+          <span class="tag">Design patterns</span>
+          <span class="tag">TypeScript</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 class="contact-h">Open to a <span>conversation</span></h2>
+        <p class="contact-p">
+          Not looking for full-time roles right now, but if you're working on something
+          interesting in PE tech, applied AI, or MCP — or just want to talk through a
+          problem — I'm happy to chat.
+        </p>
+        <div class="contact-links">
+          <a href="https://github.com/pravnkr" target="_blank" class="c-link">
+            <div>
+              <p class="c-link-lbl">GitHub</p>
+              <p class="c-link-val">github.com/pravnkr</p>
+            </div>
+            <span class="c-link-arr">→</span>
+          </a>
+          <a href="https://linkedin.com/in/pravnkr" target="_blank" class="c-link">
+            <div>
+              <p class="c-link-lbl">LinkedIn</p>
+              <p class="c-link-val">linkedin.com/in/pravnkr</p>
+            </div>
+            <span class="c-link-arr">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="note-card reveal">
+        <div class="note-top">
+          <p class="note-label">Get in touch</p>
+          <p class="note-title">PE tech, applied AI,<br>or just a good problem?</p>
+          <p class="note-desc">
+            Working on something at the intersection of financial data and AI? Building
+            with MCP or agents? I find these conversations worthwhile. Reach out.
+          </p>
+        </div>
+        <div class="note-bot">
+          <a href="mailto:praveenkumar8484@outlook.com" class="note-email">
+            praveenkumar8484@outlook.com
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-in">
+    <p>© 2026 Praveen Kumar</p>
+    <p><a href="https://github.com/pravnkr/dev-portfolio" target="_blank">Source on GitHub ↗</a></p>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal, .work-item, .exp-item, .sg').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 5) * 0.06}s`;
+    obs.observe(el);
+  });
+
+  const secs = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (scrollY >= s.offsetTop - 80) cur = s.id; });
+    navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+  }, { passive: true });
+</script>
+
+</body>
+</html>
