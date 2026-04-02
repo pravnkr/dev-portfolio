@@ -5,10 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Praveen Kumar — Lead Software Engineer at DealsPlus.io</title>
 <meta name="description" content="Praveen Kumar — Lead Software Engineer building financial systems for Private Equity and applied AI solutions. MCP servers, RAG pipelines, and multi-agent workflows.">
+<meta property="og:title" content="Praveen Kumar — Lead SE at DealsPlus.io">
+<meta property="og:description" content="Lead Software Engineer building financial systems for Private Equity and applied AI. MCP servers, RAG pipelines, multi-agent workflows.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pravnkr.github.io/dev-portfolio/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Praveen Kumar — Lead SE at DealsPlus.io">
+<meta name="twitter:description" content="Lead Software Engineer building financial systems for Private Equity and applied AI.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%237C6BFF'/><text x='50' y='72' font-size='60' fill='white' text-anchor='middle' font-family='sans-serif' font-weight='bold'>PK</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript>
+  <style>.fade-in,.card-stagger,.slide-left,.slide-right,.skill-pop,.chapter-text .word{opacity:1!important;transform:none!important;visibility:visible!important;}</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700&display=swap" rel="stylesheet">
+</noscript>
 <style>
 
   :root {
@@ -36,7 +50,6 @@
 
   body {
     font-family: var(--font-b);
-    font-feature-settings: 'cv01' 1, 'cv02' 1;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -65,7 +78,7 @@
     content: '';
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 99;
     pointer-events: none;
     opacity: 0.03;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -87,6 +100,25 @@
     will-change: width;
   }
 
+  /* SKIP LINK */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    z-index: 20000;
+    transition: top 0.2s;
+  }
+  .skip-link:focus {
+    top: 8px;
+  }
+
   /* FOCUS VISIBLE — keyboard navigation support */
   *:focus-visible {
     outline: 2px solid var(--accent);
@@ -95,7 +127,7 @@
   }
 
   /* NAV */
-  nav {
+  #nav {
     position: fixed;
     top: 2px;
     left: 0;
@@ -111,7 +143,7 @@
     border-bottom: 1px solid transparent;
   }
 
-  nav.scrolled {
+  #nav.scrolled {
     background: rgba(12,12,13,0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -138,6 +170,22 @@
   }
 
   .nav-cta:hover { opacity: 0.7; }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text2);
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
 
   /* CHAPTER BREAKS */
   .chapter {
@@ -175,10 +223,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    will-change: transform;
   }
 
   .chapter-text {
+    margin: 0;
     font-family: var(--font-d);
     font-size: clamp(48px, 8vw, 80px);
     font-weight: 700;
@@ -189,7 +237,6 @@
     position: relative;
     z-index: 1;
     text-shadow: 0 0 80px var(--accent-dim);
-    will-change: transform;
   }
 
   /* Word-by-word reveal for chapter text */
@@ -213,7 +260,7 @@
   .chapter-sub {
     font-family: var(--font-b);
     font-size: 15px;
-    color: var(--text3);
+    color: var(--text2);
     margin-top: 16px;
     letter-spacing: 0.02em;
     position: relative;
@@ -245,6 +292,14 @@
     animation: shimmer 8s ease-in-out infinite;
   }
 
+  @supports not (background-clip: text) {
+    .hero-name {
+      background: none;
+      -webkit-text-fill-color: var(--text);
+      color: var(--text);
+    }
+  }
+
   @keyframes shimmer {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -260,11 +315,11 @@
   }
 
   .role-highlight-blue {
-    color: #187CC0;
+    color: #2A9AD4;
   }
 
   .role-highlight-green {
-    color: #20A94A;
+    color: #2FC55A;
   }
 
   .hero-bio {
@@ -395,6 +450,10 @@
   }
 
   /* ABOUT PROSE */
+  .prose p, .work-desc, .exp-desc, .hero-bio, .writing-item-desc, .contact-blurb {
+    font-feature-settings: 'cv01' 1, 'cv02' 1;
+  }
+
   .prose p {
     font-size: 17px;
     font-weight: 400;
@@ -411,11 +470,14 @@
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s ease;
+    visibility: hidden;
   }
 
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s;
   }
 
   /* SLIDE-LEFT (experience) */
@@ -423,11 +485,14 @@
     opacity: 0;
     transform: translateX(-20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    visibility: hidden;
   }
 
   .slide-left.visible {
     opacity: 1;
     transform: translateX(0);
+    visibility: visible;
+    transition: opacity 0.6s ease, transform 0.6s ease, visibility 0s;
   }
 
   /* SLIDE-RIGHT (writing) */
@@ -435,11 +500,14 @@
     opacity: 0;
     transform: translateX(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    visibility: hidden;
   }
 
   .slide-right.visible {
     opacity: 1;
     transform: translateX(0);
+    visibility: visible;
+    transition: opacity 0.6s ease, transform 0.6s ease, visibility 0s;
   }
 
   /* CARD STAGGER (projects) */
@@ -447,11 +515,14 @@
     opacity: 0;
     transform: translateY(12px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    visibility: hidden;
   }
 
   .card-stagger.visible {
     opacity: 1;
     transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.6s ease, transform 0.6s ease, visibility 0s;
   }
 
   /* SKILL POP-IN */
@@ -459,11 +530,14 @@
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 0.4s ease, transform 0.4s ease;
+    visibility: hidden;
   }
 
   .skill-pop.visible {
     opacity: 1;
     transform: scale(1);
+    visibility: visible;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s;
   }
 
   /* WORK CARDS — v2 Linear style */
@@ -481,7 +555,7 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     background: var(--bg-card);
-    transition: all 0.25s ease;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     position: relative;
     overflow: hidden;
   }
@@ -609,7 +683,7 @@
 
   .skill-tag.exploratory {
     font-size: 12px;
-    color: var(--text3);
+    color: var(--text2);
     border-color: rgba(255,255,255,0.04);
   }
 
@@ -728,20 +802,7 @@
     gap: 6px;
   }
 
-  /* WRITING (embedded) */
-  .writing-section {
-    padding-top: 0;
-  }
-
-  .writing-title {
-    font-family: var(--font-d);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: -0.02em;
-    margin-bottom: 24px;
-  }
-
+  /* WRITING */
   .writing-item {
     display: block;
     padding: 24px 0;
@@ -813,6 +874,10 @@
     transition: opacity 0.2s;
   }
 
+  .contact-email {
+    overflow-wrap: break-word;
+  }
+
   .contact-email:hover { opacity: 0.7; }
 
   .contact-blurb {
@@ -842,7 +907,7 @@
     padding: 10px 20px;
     border: 1px solid var(--border);
     border-radius: 6px;
-    transition: all 0.2s;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
   }
 
   .contact-link:hover {
@@ -860,7 +925,7 @@
     text-align: center;
     font-family: var(--font-m);
     font-size: 12px;
-    color: var(--text3);
+    color: var(--text2);
     z-index: 1;
   }
 
@@ -908,7 +973,6 @@
     transform: translate(-50%, -50%);
     animation: chapterPulse 6s ease-in-out infinite;
     pointer-events: none;
-    will-change: transform;
   }
 
   @keyframes chapterPulse {
@@ -922,15 +986,33 @@
     color: var(--text);
   }
 
+  .hero-name::selection {
+    -webkit-text-fill-color: var(--text);
+    background: rgba(124,107,255,0.3);
+  }
+
   /* SCROLLBAR */
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.14); }
 
+  /* Firefox scrollbar */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.08) var(--bg);
+  }
+
+  /* MOBILE NAV */
+  .mobile-nav {
+    display: none;
+  }
+
   /* RESPONSIVE */
   @media (max-width: 880px) {
-    nav { padding: 0 24px; }
+    body { padding-bottom: 52px; }
+    #nav { padding: 0 24px; }
+    .nav-links { display: none; }
     .content-section { padding: 80px 24px; }
     .work-card { grid-template-columns: 1fr; gap: 12px; padding: 22px 20px; }
     .exp-timeline::before { display: none; }
@@ -938,11 +1020,41 @@
     .exp-item::after { display: none; }
     .exp-content { padding-left: 0; }
     .exp-period { text-align: left; }
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(12,12,13,0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      justify-content: space-around;
+      gap: 8px;
+    }
+    .mobile-nav a {
+      font-family: var(--font-m);
+      font-size: 11px;
+      color: var(--text2);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 8px;
+      transition: color 0.18s;
+    }
+    .mobile-nav a:hover, .mobile-nav a.active {
+      color: var(--text);
+    }
   }
 
   @media (max-width: 640px) {
-    nav { padding: 0 20px; height: 56px; }
+    #nav { padding: 0 20px; height: 56px; }
     .content-section { padding: 64px 20px; }
+    #contact { height: auto; min-height: 100vh; padding-bottom: 80px; }
+    #contact .site-footer { position: static; padding-top: 32px; }
     .hero-name {
       font-size: clamp(42px, 12vw, 56px);
       animation: none;
@@ -965,28 +1077,48 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+    *:focus-visible { transition-duration: 0.15s !important; }
+    html { scroll-behavior: auto !important; }
     .scroll-progress { display: none; }
+    .fade-in, .card-stagger, .slide-left, .slide-right, .skill-pop {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+    }
+    .chapter-text .word {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+    }
   }
 </style>
 </head>
 <body>
+<a href="#about" class="skip-link">Skip to content</a>
 
 <!-- SCROLL PROGRESS BAR -->
-<div class="scroll-progress" id="scrollProgress"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- NAV -->
-<nav id="nav">
+<nav id="nav" aria-label="Main navigation">
   <a href="#hero" class="nav-name">Praveen Kumar</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
   <a href="#contact" class="nav-cta">get in touch</a>
 </nav>
 
+<main>
 <!-- ========== CHAPTER: HERO ========== -->
 <section class="chapter chapter--hero" id="hero">
   <div class="hero-content">
     <h1 class="hero-name">Praveen Kumar</h1>
     <p class="hero-role">Lead Software Engineer at <span class="role-highlight-blue">Deals</span><span class="role-highlight-green">Plus</span>.io</p>
     <p class="hero-bio">
-      I build financial systems for Private Equity and work heavily in applied AI: custom MCP servers, RAG pipelines, and AI agents wired into real product workflows. Lately the financial engineering and the AI work keep running into each other.
+      I build financial systems for Private Equity and work heavily in applied AI: custom MCP servers, RAG pipelines, and AI agents wired into real product workflows. Lately I'm building AI that works with financial data directly.
     </p>
     <div class="hero-stats">
       <span><span class="counter" data-target="7">0</span>+ engineers led</span>
@@ -997,16 +1129,16 @@
     </div>
   </div>
   <div class="scroll-indicator">
-    <div class="scroll-label">Scroll</div>
+    <div class="scroll-label" aria-hidden="true">Scroll</div>
     <div class="scroll-line"></div>
   </div>
 </section>
 
 <!-- ========== CONTENT: ABOUT ========== -->
-<section class="content-section">
+<section class="content-section" id="about">
   <div class="content-narrow prose">
     <p class="fade-in">
-      I lead backend engineering at <strong>dealsplus.io</strong>, a Private Equity platform where fund managers model ownership structures, run valuations, and manage deal data. My team ships across multiple stacks.
+      I lead backend engineering at <strong>DealsPlus</strong>, a Private Equity platform where fund managers model ownership structures, run valuations, and manage deal data. My team ships across Java/Spring Boot and React.
     </p>
     <p class="fade-in">
       I also build with <strong>applied AI</strong> daily — it's not a side thing. I've written custom MCP servers, RAG systems over our domain data, multi-agent workflows using DeepAgents on top of LangGraph, and chatbots that actually understand what users are looking at.
@@ -1019,7 +1151,7 @@
 
 <!-- ========== CHAPTER BREAK: WORK ========== -->
 <section class="chapter" id="work">
-  <div class="chapter-text parallax-text" data-reveal="words">Things I've built</div>
+  <h2 class="chapter-text parallax-text" data-reveal="words">Things I've built</h2>
 </section>
 
 <!-- ========== CONTENT: WORK ========== -->
@@ -1030,7 +1162,7 @@
       <div class="work-card card-stagger">
         <div class="work-label">
           <p class="work-type">Applied AI</p>
-          <p class="work-co">dealsplus.io</p>
+          <p class="work-co">DealsPlus</p>
         </div>
         <div>
           <p class="work-title">MCP Server</p>
@@ -1048,11 +1180,11 @@
       <div class="work-card card-stagger">
         <div class="work-label">
           <p class="work-type">Applied AI</p>
-          <p class="work-co">dealsplus.io</p>
+          <p class="work-co">DealsPlus</p>
         </div>
         <div>
           <p class="work-title">AI Agent</p>
-          <p class="work-desc">RAG-backed agent over our platform docs and client-specific deal data. Answers questions about specific structures, investors, and deals inside the product. The hard part: retrieval had to respect client data boundaries without becoming useless.</p>
+          <p class="work-desc">I built a RAG-backed agent over our platform docs and client-specific deal data. It answers questions about specific structures, investors, and deals inside the product. The hard part: retrieval had to respect client data boundaries without becoming useless.</p>
           <div class="work-tags">
             <span class="ptag hi">RAG</span>
             <span class="ptag hi">DeepAgents</span>
@@ -1066,11 +1198,11 @@
       <div class="work-card card-stagger">
         <div class="work-label">
           <p class="work-type">Applied AI</p>
-          <p class="work-co">dealsplus.io</p>
+          <p class="work-co">DealsPlus</p>
         </div>
         <div>
           <p class="work-title">In-app Chatbot</p>
-          <p class="work-desc">Chatbot that knows what page you're on and can take actions inside the product. Not a floating widget — it's wired into the actual workflows.</p>
+          <p class="work-desc">I built a chatbot that knows what page you're on and can take actions inside the product. Not a floating widget — it's wired into the actual workflows.</p>
           <div class="work-tags">
             <span class="ptag hi">DeepAgents</span>
             <span class="ptag hi">LangGraph</span>
@@ -1084,11 +1216,11 @@
       <div class="work-card card-stagger">
         <div class="work-label">
           <p class="work-type">Financial Engine</p>
-          <p class="work-co">dealsplus.io</p>
+          <p class="work-co">DealsPlus</p>
         </div>
         <div>
           <p class="work-title">Cap Table Engine</p>
-          <p class="work-desc">Calculation engine for ownership across multi-round structures: share classes, investor stakes, dilution as new rounds come in. Cap tables get messy fast, and this has to stay correct when they do.</p>
+          <p class="work-desc">I built the calculation engine for ownership across multi-round structures: share classes, investor stakes, dilution as new rounds come in. Cap tables get messy fast, and this has to stay correct when they do.</p>
           <div class="work-tags">
             <span class="ptag hi">Java</span>
             <span class="ptag hi">Spring Boot</span>
@@ -1101,11 +1233,11 @@
       <div class="work-card card-stagger">
         <div class="work-label">
           <p class="work-type">Financial Engine</p>
-          <p class="work-co">dealsplus.io</p>
+          <p class="work-co">DealsPlus</p>
         </div>
         <div>
           <p class="work-title">Valuation Engine</p>
-          <p class="work-desc">Brought Excel-compatible valuation models into the platform so they feel native, not bolted on. PE valuation models accumulate layers of nested conditional logic over the years — the engine handles that.</p>
+          <p class="work-desc">I brought Excel-compatible valuation models into the platform so they feel native, not bolted on. PE valuation models accumulate layers of nested conditional logic over the years — this engine handles that.</p>
           <div class="work-tags">
             <span class="ptag hi">Java</span>
             <span class="ptag hi">Spring Boot</span>
@@ -1118,11 +1250,11 @@
       <div class="work-card card-stagger">
         <div class="work-label">
           <p class="work-type">Integration</p>
-          <p class="work-co">dealsplus.io</p>
+          <p class="work-co">DealsPlus</p>
         </div>
         <div>
           <p class="work-title">Excel Integration</p>
-          <p class="work-desc">Connects dealsplus with Excel so users can stay in the tool they already use. PE professionals live in spreadsheets — so we meet them there.</p>
+          <p class="work-desc">I built the integration that connects DealsPlus with Excel so users can stay in the tool they already use. PE professionals live in spreadsheets — so we meet them there.</p>
           <div class="work-tags">
             <span class="ptag hi">Java</span>
             <span class="ptag hi">Spring Boot</span>
@@ -1167,7 +1299,7 @@
 
 <!-- ========== CHAPTER BREAK: EXPERIENCE ========== -->
 <section class="chapter" id="experience">
-  <div class="chapter-text parallax-text" data-reveal="words">7 years, 4 teams</div>
+  <h2 class="chapter-text parallax-text" data-reveal="words">7 years, 4 teams</h2>
   <p class="chapter-sub">Where I've worked</p>
   <div class="timeline-dots">
     <div class="timeline-dot"></div>
@@ -1251,14 +1383,13 @@
 
 <!-- ========== CHAPTER BREAK: WRITING ========== -->
 <section class="chapter" id="writing">
-  <div class="chapter-text parallax-text" data-reveal="words">I also write</div>
+  <h2 class="chapter-text parallax-text" data-reveal="words">I also write</h2>
 </section>
 
 <!-- ========== CONTENT: WRITING ========== -->
 <section class="content-section">
   <div class="content-medium">
-    <div class="writing-section">
-      <a href="https://medium.com/@iampraveenkumar/mastering-jpa-inheritance-strategies-hibernate-6-x-jpa-3-x-spring-boot-3-x-06eecac1147a" target="_blank" class="writing-item slide-right">
+      <a href="https://medium.com/@iampraveenkumar/mastering-jpa-inheritance-strategies-hibernate-6-x-jpa-3-x-spring-boot-3-x-06eecac1147a" target="_blank" rel="noopener noreferrer" class="writing-item slide-right" aria-label="Mastering JPA Inheritance Strategies — Medium article">
         <p class="writing-item-meta">Mar 2024 &middot; Technical</p>
         <p class="writing-item-title">
           Mastering JPA Inheritance Strategies
@@ -1267,7 +1398,7 @@
         <p class="writing-item-desc">Walks through JPA inheritance strategies (single table, joined, table-per-class) using a PE fund structure as the example.</p>
       </a>
 
-      <a href="https://medium.com/@iampraveenkumar/implementing-a-map-strategy-pattern-with-angular-13-bd06065bad50" target="_blank" class="writing-item slide-right">
+      <a href="https://medium.com/@iampraveenkumar/implementing-a-map-strategy-pattern-with-angular-13-bd06065bad50" target="_blank" rel="noopener noreferrer" class="writing-item slide-right" aria-label="Implementing a Map Strategy Pattern With Angular 13+ — Medium article">
         <p class="writing-item-meta">Jun 2022 &middot; Technical</p>
         <p class="writing-item-title">
           Implementing a Map Strategy Pattern With Angular 13+
@@ -1275,28 +1406,41 @@
         </p>
         <p class="writing-item-desc">How to replace sprawling if/else chains with a clean map-based strategy pattern in Angular, using dependency injection and InjectionToken.</p>
       </a>
-    </div>
   </div>
 </section>
 
 <!-- ========== CHAPTER: CONTACT ========== -->
 <section class="chapter" id="contact">
-  <div class="chapter-text parallax-text" data-reveal="words">Let's talk.</div>
+  <h2 class="chapter-text parallax-text" data-reveal="words">Let's talk.</h2>
   <a href="mailto:praveenkumar8484@outlook.com" class="contact-email">praveenkumar8484@outlook.com</a>
   <p class="contact-blurb">Building something in PE tech, applied AI, or MCP? I like these conversations.</p>
   <div class="contact-links">
-    <a href="https://github.com/pravnkr" target="_blank" class="contact-link">GitHub &nearr;</a>
-    <a href="https://linkedin.com/in/pravnkr" target="_blank" class="contact-link">LinkedIn &nearr;</a>
+    <a href="https://github.com/pravnkr" target="_blank" rel="noopener noreferrer" class="contact-link">GitHub &nearr;</a>
+    <a href="https://linkedin.com/in/pravnkr" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn &nearr;</a>
   </div>
   <footer class="site-footer">
     &copy; 2026 Praveen Kumar
   </footer>
 </section>
 
+<nav class="mobile-nav" aria-label="Section navigation">
+  <a href="#work">Work</a>
+  <a href="#experience">Experience</a>
+  <a href="#writing">Writing</a>
+  <a href="#contact">Contact</a>
+</nav>
+</main>
+
 <script>
 (function() {
-  const isMobile = window.innerWidth < 768;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Fix #2: matchMedia listeners for rotation-safe breakpoint tracking
+  const mobileQuery = window.matchMedia('(max-width: 767px)');
+  let isMobile = mobileQuery.matches;
+  mobileQuery.addEventListener('change', e => { isMobile = e.matches; });
+
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let prefersReducedMotion = motionQuery.matches;
+  motionQuery.addEventListener('change', e => { prefersReducedMotion = e.matches; });
 
   // ---- SCROLL PROGRESS BAR ----
   const progressBar = document.getElementById('scrollProgress');
@@ -1319,27 +1463,33 @@
     updateProgress();
   }
   window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // Fix #6: Initialize on load for restored scroll positions
 
-  // ---- COUNTER ANIMATION (hero stats) ----
-  function animateCounters() {
+  // ---- COUNTER ANIMATION (hero stats) — Fix #5 ----
+  let counterAnimating = false;
+  function animateCounters(delay) {
+    if (counterAnimating) return;
+    counterAnimating = true;
+    const wait = delay || 0;
     document.querySelectorAll('.counter').forEach(el => {
       const target = parseInt(el.dataset.target, 10);
       const duration = 1200;
-      const startTime = performance.now();
-
-      function tick(now) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        // ease-out cubic
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(eased * target);
-        el.textContent = current;
-        if (progress < 1) {
-          requestAnimationFrame(tick);
+      el.textContent = '0';
+      setTimeout(() => {
+        const startTime = performance.now();
+        function tick(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            counterAnimating = false;
+          }
         }
-      }
-      // Start after hero fades in
-      setTimeout(() => requestAnimationFrame(tick), 700);
+        requestAnimationFrame(tick);
+      }, wait);
     });
 
     // Fade in "PE domain"
@@ -1347,13 +1497,26 @@
     if (statFade) {
       statFade.style.opacity = '0';
       statFade.style.transition = 'opacity 0.6s ease';
-      setTimeout(() => { statFade.style.opacity = '1'; }, 900);
+      setTimeout(() => { statFade.style.opacity = '1'; }, wait);
     }
   }
 
-  if (!prefersReducedMotion) {
-    animateCounters();
+  // Counters: animate if no reduced motion and hero visible, else show final values
+  const heroEl = document.getElementById('hero');
+  if (!prefersReducedMotion && heroEl && heroEl.getBoundingClientRect().bottom > 0) {
+    animateCounters(1100); // Delay for hero fade-in on initial load
+  } else {
+    document.querySelectorAll('.counter').forEach(el => {
+      el.textContent = el.dataset.target;
+    });
   }
+
+  // Re-run counters if user disables reduced motion (no delay needed)
+  motionQuery.addEventListener('change', e => {
+    if (!e.matches && heroEl && heroEl.getBoundingClientRect().bottom > 0) {
+      animateCounters(0);
+    }
+  });
 
   // ---- WORD-BY-WORD REVEAL FOR CHAPTER TEXT ----
   document.querySelectorAll('[data-reveal="words"]').forEach(el => {
@@ -1369,35 +1532,26 @@
     });
   });
 
-  // Chapter word reveal observer
-  const chapterRevealObs = new IntersectionObserver(entries => {
+  // ---- Fix #17: Consolidated Observer 1 — Chapter effects (reveal + bg shift) ----
+  const chapterObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
+      // Background shift toggles on/off; word reveal is one-shot
+      e.target.classList.toggle('in-view', e.isIntersecting);
       if (e.isIntersecting) {
-        e.target.classList.add('revealed');
+        const text = e.target.querySelector('.chapter-text');
+        if (text) text.classList.add('revealed');
       }
     });
   }, { threshold: 0.3 });
 
-  document.querySelectorAll('.chapter-text').forEach(el => {
-    chapterRevealObs.observe(el);
-  });
-
-  // ---- CHAPTER BACKGROUND SHIFT ----
-  const chapterBgObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      e.target.classList.toggle('in-view', e.isIntersecting);
-    });
-  }, { threshold: 0.4 });
-
-  document.querySelectorAll('.chapter').forEach(el => {
-    chapterBgObs.observe(el);
-  });
+  document.querySelectorAll('.chapter').forEach(el => chapterObs.observe(el));
 
   // ---- SECTION BORDER DRAW ----
   const sectionObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('section-visible');
+        sectionObs.unobserve(e.target);
       }
     });
   }, { threshold: 0.05 });
@@ -1406,63 +1560,34 @@
     sectionObs.observe(el);
   });
 
-  // ---- FADE-IN OBSERVER ----
-  const fadeObs = new IntersectionObserver(entries => {
+  // ---- Fix #17: Consolidated Observer 2 — Content reveal animations ----
+  const revealObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
   document.querySelectorAll('.fade-in').forEach((el, i) => {
     el.style.transitionDelay = ((i % 6) * 0.07) + 's';
-    fadeObs.observe(el);
+    revealObs.observe(el);
   });
-
-  // ---- STAGGERED CARD REVEAL (projects) ----
-  const cardObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        cardObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
 
   document.querySelectorAll('.card-stagger').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.15) + 's';
-    cardObs.observe(el);
+    revealObs.observe(el);
   });
-
-  // ---- SLIDE-LEFT OBSERVER (experience) ----
-  const slideLeftObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        slideLeftObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
   document.querySelectorAll('.slide-left').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.2) + 's';
-    slideLeftObs.observe(el);
+    revealObs.observe(el);
   });
-
-  // ---- SLIDE-RIGHT OBSERVER (writing) ----
-  const slideRightObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        slideRightObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
   document.querySelectorAll('.slide-right').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.15) + 's';
-    slideRightObs.observe(el);
+    revealObs.observe(el);
   });
 
   // ---- SKILL TAG POP-IN ----
@@ -1489,11 +1614,21 @@
   }
 
   // ---- PARALLAX ON CHAPTER TEXT ----
-  if (!isMobile && !prefersReducedMotion) {
+  {
     const parallaxEls = document.querySelectorAll('.parallax-text');
     let ticking = false;
 
     function updateParallax() {
+      if (isMobile || prefersReducedMotion) {
+        // Reset transforms and glow offsets when parallax should be off
+        parallaxEls.forEach(el => {
+          el.style.transform = '';
+          const parent = el.closest('.chapter');
+          if (parent) parent.style.removeProperty('--glow-offset');
+        });
+        ticking = false;
+        return;
+      }
       const vh = window.innerHeight;
 
       parallaxEls.forEach(el => {
@@ -1527,14 +1662,31 @@
     }, { passive: true });
   }
 
-  // ---- PROJECT CARD GLOW (mouse tracking) ----
+  // ---- NAV ACTIVE LINK TRACKING (desktop + mobile) — Fix #14 ----
+  const secs = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  const mobileNavAs = document.querySelectorAll('.mobile-nav a');
+  function updateActiveNav() {
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+    mobileNavAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  // ---- PROJECT CARD GLOW (mouse tracking) — Fix #7: rAF throttled ----
   document.querySelectorAll('.work-card').forEach(card => {
+    let rafPending = false;
     card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', x + 'px');
-      card.style.setProperty('--mouse-y', y + 'px');
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+        card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+        rafPending = false;
+      });
     });
   });
 })();
